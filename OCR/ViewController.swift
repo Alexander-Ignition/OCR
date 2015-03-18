@@ -12,7 +12,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        var tesseract:G8Tesseract = G8Tesseract();
+        var tesseract = Tesseract();
     }
 
     override func didReceiveMemoryWarning() {
