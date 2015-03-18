@@ -9,7 +9,9 @@
 import UIKit
 
 class ViewController: UIViewController, UINavigationControllerDelegate {
-
+    
+    let maxDimension = 640
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -56,7 +58,7 @@ extension ViewController: UIImagePickerControllerDelegate {
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
         let selectedPhoto = info[UIImagePickerControllerOriginalImage] as UIImage
-        let scaledImage = selectedPhoto.scaleImage(maxDimension: 640)
+        let scaledImage = selectedPhoto.scaleImage(maxDimension: CGFloat(maxDimension))
         
         dismissViewControllerAnimated(true) {
             self.performImageRecognition(scaledImage)
