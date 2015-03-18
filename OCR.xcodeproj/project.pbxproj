@@ -13,6 +13,7 @@
 		1103CBD21AB89C3000D6EAD5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1103CBD11AB89C3000D6EAD5 /* Images.xcassets */; };
 		1103CBD51AB89C3000D6EAD5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1103CBD31AB89C3000D6EAD5 /* LaunchScreen.xib */; };
 		1103CBE11AB89C3000D6EAD5 /* OCRTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1103CBE01AB89C3000D6EAD5 /* OCRTests.swift */; };
+		11CED9BA1AB9EB090068E920 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = 11CED9B91AB9EB090068E920 /* tessdata */; };
 		36A6CE693559E3CC87E397E6 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 000615527F9B9D9A83512702 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +39,7 @@
 		1103CBDA1AB89C3000D6EAD5 /* OCRTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OCRTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1103CBDF1AB89C3000D6EAD5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1103CBE01AB89C3000D6EAD5 /* OCRTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCRTests.swift; sourceTree = "<group>"; };
+		11CED9B91AB9EB090068E920 /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tessdata; sourceTree = "<group>"; };
 		329F99241AB9692B0098439C /* OCR-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OCR-Bridging-Header.h"; sourceTree = "<group>"; };
 		5DCB63F5F0127C610C0C9B78 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		981C2935248D51CAC4C3ADC8 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 			children = (
 				1103CBC91AB89C3000D6EAD5 /* Info.plist */,
 				329F99241AB9692B0098439C /* OCR-Bridging-Header.h */,
+				11CED9B91AB9EB090068E920 /* tessdata */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -221,6 +224,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1103CBD01AB89C3000D6EAD5 /* Main.storyboard in Resources */,
+				11CED9BA1AB9EB090068E920 /* tessdata in Resources */,
 				1103CBD51AB89C3000D6EAD5 /* LaunchScreen.xib in Resources */,
 				1103CBD21AB89C3000D6EAD5 /* Images.xcassets in Resources */,
 			);

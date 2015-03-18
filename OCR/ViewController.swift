@@ -12,6 +12,8 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
     
     let maxDimension = 640
     
+    @IBOutlet weak var textView: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -74,8 +76,10 @@ extension ViewController: TesseractDelegate {
     
     func performImageRecognition(image: UIImage) {
         let tesseract = Tesseract()
-        tesseract.language = "eng+fra"
+        tesseract.language = "eng+rus"
         tesseract.recognize()
+        
+        
     }
     
     // MARK: TesseractDelegate
