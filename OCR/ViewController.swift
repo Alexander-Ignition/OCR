@@ -115,13 +115,15 @@ extension ViewController: TesseractDelegate {
     
     // MARK: TesseractDelegate
     
-    func progressImageRecognitionForTesseract(tesseract: Tesseract!) {
-        progressView.progress = Float(tesseract.progress)
-    }
-    
-//    func shouldCancelImageRecognitionForTesseract(tesseract: Tesseract!) -> Bool {
-//        return false;
+//    func progressImageRecognitionForTesseract(tesseract: Tesseract!) {
+//        progressView.progress = Float(tesseract.progress)
 //    }
+    
+    func shouldCancelImageRecognitionForTesseract(tesseract: Tesseract!) -> Bool {
+        progressView.progress = Float(tesseract.progress) / 100
+        println(tesseract.progress)
+        return false;
+    }
     
     
 }
