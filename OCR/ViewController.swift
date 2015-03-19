@@ -96,20 +96,27 @@ extension ViewController: TesseractDelegate {
     
     func performImageRecognition(image: UIImage) {
         
+        progressView.progress = 0
         
-        let tesseract = Tesseract()
-        tesseract.language = TesseractLanguages
-        tesseract.delegate = self
-        tesseract.image = image
-        
-        println(tesseract.progress)
-        if tesseract.recognize() {
+        dispatch_async(ai_queue.background) {
+            let tesseract = Tesseract()
+            tesseract.language = self.TesseractLanguages
+            tesseract.delegate = self
+            tesseract.image = image.blackAndWhite()
             
-            println(tesseract.recognizedText)
-            println(tesseract.language)
             println(tesseract.progress)
-            
-            textView.text = tesseract.recognizedText
+            if tesseract.recognize() {
+                
+                println(tesseract.recognizedText)
+                println(tesseract.language)
+                println(tesseract.progress)
+                
+                
+                dispatch_async(ai_queue.main) {
+                    self.progressView.progress = 1
+                    self.textView.text = tesseract.recognizedText
+                }
+            }
         }
     }
     
@@ -120,7 +127,9 @@ extension ViewController: TesseractDelegate {
 //    }
     
     func shouldCancelImageRecognitionForTesseract(tesseract: Tesseract!) -> Bool {
-        progressView.progress = Float(tesseract.progress) / 100
+        dispatch_async(ai_queue.main) {
+            self.progressView.progress = Float(tesseract.progress) / 100
+        }
         println(tesseract.progress)
         return false;
     }
