@@ -24,6 +24,22 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
     
     // MARK: Actions
 
+    @IBAction func shareAction(sender: AnyObject) {
+        if textView.text.isEmpty {
+            return
+        }
+        let activityViewController = UIActivityViewController(activityItems:[textView.text], applicationActivities: nil)
+        let excludeActivities = [
+            UIActivityTypeAssignToContact,
+            UIActivityTypeSaveToCameraRoll,
+            UIActivityTypeAddToReadingList,
+            UIActivityTypePostToFlickr,
+            UIActivityTypePostToVimeo
+        ]
+        activityViewController.excludedActivityTypes = excludeActivities
+        presentViewController(activityViewController, animated: true, completion: nil)
+    }
+    
     @IBAction func cameraAction(sender: UIBarButtonItem) {
         let imagePickerActionSheet = UIAlertController(title: "Snap/Upload Photo", message: nil, preferredStyle: .ActionSheet)
         

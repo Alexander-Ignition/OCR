@@ -45,7 +45,11 @@
                                 <action selector="cameraAction:" destination="vXZ-lx-hvc" id="ICR-co-HV9"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="Rp9-yN-W7b"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="Rp9-yN-W7b">
+                            <connections>
+                                <action selector="shareAction:" destination="vXZ-lx-hvc" id="4st-l2-s0p"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="cameraButton" destination="wWb-zj-r8k" id="xgB-2L-dbn"/>
