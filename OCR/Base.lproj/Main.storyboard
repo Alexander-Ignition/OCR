@@ -5,7 +5,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--OCR-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="OCR" customModuleProvider="target" sceneMemberID="viewController">
@@ -24,23 +24,33 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="vmk-nZ-RHw">
+                                <rect key="frame" x="0.0" y="64" width="600" height="2"/>
+                            </progressView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="vmk-nZ-RHw" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="6TD-RC-oou"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vmk-nZ-RHw" secondAttribute="trailing" constant="-16" id="Hk3-hA-DqP"/>
                             <constraint firstItem="omN-Hk-zWl" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="Zli-Cx-TNK"/>
                             <constraint firstItem="omN-Hk-zWl" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" id="kGv-kJ-GmU"/>
                             <constraint firstAttribute="trailingMargin" secondItem="omN-Hk-zWl" secondAttribute="trailing" constant="-16" id="l84-eK-UuM"/>
+                            <constraint firstItem="vmk-nZ-RHw" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="lBa-Co-bGr"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="omN-Hk-zWl" secondAttribute="bottom" id="q5e-hp-xPH"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="EJG-SY-KqU">
-                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="wWb-zj-r8k">
+                    <navigationItem key="navigationItem" title="OCR" id="EJG-SY-KqU">
+                        <barButtonItem key="leftBarButtonItem" systemItem="camera" id="wWb-zj-r8k">
                             <connections>
                                 <action selector="cameraAction:" destination="vXZ-lx-hvc" id="ICR-co-HV9"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="Rp9-yN-W7b"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="cameraButton" destination="wWb-zj-r8k" id="xgB-2L-dbn"/>
+                        <outlet property="progressView" destination="vmk-nZ-RHw" id="MOk-Xn-KAk"/>
+                        <outlet property="shareButton" destination="Rp9-yN-W7b" id="oXS-1d-aDb"/>
                         <outlet property="textView" destination="omN-Hk-zWl" id="Imv-LT-B4S"/>
                     </connections>
                 </viewController>

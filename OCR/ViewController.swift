@@ -11,8 +11,12 @@ import UIKit
 class ViewController: UIViewController, UINavigationControllerDelegate {
     
     let maxDimension = 640
+    let TesseractLanguages = "eng+rus"
     
-    @IBOutlet weak var textView: UITextView!
+    @IBOutlet var progressView: UIProgressView!
+    @IBOutlet var cameraButton: UIBarButtonItem!
+    @IBOutlet var shareButton: UIBarButtonItem!
+    @IBOutlet var textView: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +37,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
             imagePickerActionSheet.addAction(alertAction(title: "Take Photo", withImagePickerController: .Camera))
         }
         imagePickerActionSheet.addAction(alertAction(title: "Choose Existing", withImagePickerController: .PhotoLibrary))
-        imagePickerActionSheet.addAction(UIAlertAction(title: "Cancel", style: .Cancel) { (alert) -> Void in })
+        imagePickerActionSheet.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
         presentViewController(imagePickerActionSheet, animated: true, completion: nil)
     }
 
@@ -76,7 +80,7 @@ extension ViewController: TesseractDelegate {
     
     func performImageRecognition(image: UIImage) {
         let tesseract = Tesseract()
-        tesseract.language = "eng+rus"
+        tesseract.language = TesseractLanguages
         tesseract.recognize()
         
         
