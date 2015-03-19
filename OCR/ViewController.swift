@@ -95,16 +95,19 @@ extension ViewController: UIImagePickerControllerDelegate {
 extension ViewController: TesseractDelegate {
     
     func performImageRecognition(image: UIImage) {
+        
+        
         let tesseract = Tesseract()
         tesseract.language = TesseractLanguages
         tesseract.delegate = self
         tesseract.image = image
+        
+        println(tesseract.progress)
         if tesseract.recognize() {
             
             println(tesseract.recognizedText)
             println(tesseract.language)
             println(tesseract.progress)
-            println(tesseract.language)
             
             textView.text = tesseract.recognizedText
         }
